@@ -9,4 +9,4 @@ Does not include cards from the _Gifts of Galadriel_ expansion.
 * [jQuery](https://jquery.com/)
 * [DataTables](https://datatables.net/)
 * [Underscore.js](https://underscorejs.org/)
-** for picking random items from an array with [`sample`](https://underscorejs.org/#sample)
+  * for picking random items from an array with [`sample`](https://underscorejs.org/#sample)
