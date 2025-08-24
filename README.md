@@ -5,8 +5,15 @@ At the moment, only supports 4 player setup, need a page refresh to reroll and i
 
 Does not include cards from the _Gifts of Galadriel_ expansion.
 
+## Usage
+
+View the [GitHub Page](https://vipirtti.github.io/TLotRTFotRTTGTRGEOR/).  
+Random 4 player setup is generated automatically.  
+Refresh the page to reroll, if needed.
+
 ## Used libraries
 * [jQuery](https://jquery.com/)
 * [DataTables](https://datatables.net/)
 * [Underscore.js](https://underscorejs.org/)
   * for picking random items from an array with [`sample`](https://underscorejs.org/#sample)
+
