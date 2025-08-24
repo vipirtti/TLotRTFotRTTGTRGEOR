@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<link href="https://cdn.datatables.net/v/dt/jq-3.7.0/dt-2.3.3/datatables.min.css" rel="stylesheet" integrity="sha384-sWtqFG6Z+VnbevTW2sZGgqCBrBQZHK/f7x+7bO3g8pxmbryyuc7uFRGoXGDRGv40" crossorigin="anonymous">
+	<script src="https://cdn.datatables.net/v/dt/jq-3.7.0/dt-2.3.3/datatables.min.js" integrity="sha384-9xEfF3obYH+IA33rG36IoQNOzwTtqbDV2WwybrhuAZ6XqErQpecqfo2X6bbC/Efm" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/underscore@1.13.7/underscore-umd-min.js"></script>
+	<style>
+		span.hide-text { visibility: hidden }
+		h1, td, th { text-align: center !important; }
+	</style>
+	<script>
+var gold_cards = [
+	['Samwise Gamgee'],
+	['Peregrin Took'],
+	['Meriadoc Brandybuck'],
+	['Aragorn son of Arathorn'],
+	['Boromir son of Denethor'],
+	['Legolas Greenleaf'],
+	['Gimli son of Glóin']
+];
+
+var black_cards = [
+	['Gildro Inglorion'],
+	['Farmer Maggot'],
+	['Fatty Bolger'],
+	['Tom Bombadil'],
+	['Goldberry'],
+	['Barliman Butterburg'],
+	['Glorfindel'],
+	['Bill the Pony'],
+	//According to the designer, Elrond should not be used in the Road Goes Ever On.
+	//TODO: Add Elrond as an option
+	//['Elrond'],
+	['Arwen'],
+	['Glóin'],
+	['Bilbo Baggins'],
+	['Gwaihir'],
+	['Shadowfax'],
+	['Radagast'],
+	['Orophin & Rúmil'],
+	['Haldir'],
+	['Galadriel'],
+	['Celeborn']
+];
+ 
+var gift_cards = [
+	['Mithril Shirt'],
+	['The Sword That Was Broken'],
+	['The Horn of Gondor'],
+	['Sting'],
+	['Glamdring']
+]
+
+var rider_cards = [
+	['Black Rider, The Black Breath'],
+	['The Witch-king, Morgul-knife'],
+	['Black Rider, Wrath'],
+	['Black Rider, Terror'],
+	['Black Rider, Unseen*']
+]
+ 
+$(document).ready( function () {
+	$('#fixed-numbers').DataTable( {
+		info: false,
+		ordering: false,
+		paging: false,
+		searching: false,
+		columns: [ {title: 'Fixed cards'}],
+		data: [['Frodo'], ['Gandalf']]
+	});
+	
+	$('#gold-numbers').DataTable( {
+		info: false,
+		ordering: false,
+		paging: false,
+		searching: false,
+		columns: [ {title: 'Gold cards'}],
+		data: _.sample(gold_cards, 5)
+	});
+	
+	$('#black-numbers').DataTable( {
+		info: false,
+		ordering: false,
+		paging: false,
+		searching: false,
+		columns: [ {title: 'Black cards'}],
+		data: _.sample(black_cards, 6)
+	});
+
+	$('#gift-numbers').DataTable( {
+		info: false,
+		ordering: false,
+		paging: false,
+		searching: false,
+		columns: [ {title: 'Gift card'}],
+		data: _.sample(gift_cards, 1)
+	});
+	
+	$('#rider-numbers').DataTable( {
+		info: false,
+		ordering: false,
+		paging: false,
+		searching: false,
+		columns: [ {title: 'Black Rider card'}],
+		data: _.sample(rider_cards, 1)
+	});
+} );
+	</script>
+</head>
+
+<body>
+<h1>The Lord of the Rings:<br>
+The Fellowship of the Ring:<br>
+Trick-Taking Game:<br>
+The Road Goes Ever On<br>
+Randomizer</h1>
+<table id="fixed-numbers" class="display compact"></table>
+<table id="gold-numbers" class="display compact"></table>
+<table id="black-numbers" class="display compact"></table>
+<table id="gift-numbers" class="display compact"></table>
+<table id="rider-numbers" class="display compact"></table>
+</body>
+</html>
