@@ -57,7 +57,8 @@ var rider_cards = [
 	['The Witch-king, Morgul-knife'],
 	['Black Rider, Wrath'],
 	['Black Rider, Terror'],
-	['Black Rider, Unseen*']
+	//TODO: highlight the rule about Unseen when it's picked
+	['Black Rider, Unseen (!)']
 ]
  
 $(document).ready( function () {
@@ -75,7 +76,7 @@ $(document).ready( function () {
 		ordering: false,
 		paging: false,
 		searching: false,
-		columns: [ {title: 'Gold cards'}],
+		columns: [ {title: 'Gold Numbered cards'}],
 		data: _.sample(gold_cards, 5)
 	});
 	
@@ -84,7 +85,7 @@ $(document).ready( function () {
 		ordering: false,
 		paging: false,
 		searching: false,
-		columns: [ {title: 'Black cards'}],
+		columns: [ {title: 'Black Numbered cards'}],
 		data: _.sample(black_cards, 6)
 	});
 
@@ -117,8 +118,16 @@ The Road Goes Ever On<br>
 Randomizer</h1>
 <table id="fixed-numbers" class="display compact"></table>
 <table id="gold-numbers" class="display compact"></table>
+<p>Randomly select one Gold Numbered card to flip to burdened side.</p>
 <table id="black-numbers" class="display compact"></table>
 <table id="gift-numbers" class="display compact"></table>
 <table id="rider-numbers" class="display compact"></table>
+<p><b>Victory: </b> Long (finish all characters)
+<ul>
+<li>Frodo must be always chosen, and always leads the first trick. (Ignore instructions to do otherwise.)</li>
+<li>Black Rider card must be used in one round. On chosen round, the card is given to a random non-burdened character.
+<ul><li>(!) If the Black Rider is the Unseen, it must be given to a character that uses a Threat card.</li></ul></li>
+<li>Players choose when and who to give chosen Gift to, unless it specifies who gets it.</li>
+<li>All interaction with the lost card are optional. If multiple characters interact with the lost card, the players decide which of the characters takes the card.</li>
 </body>
 </html>
